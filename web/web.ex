@@ -18,7 +18,11 @@ defmodule ChaChing.Web do
 
   def model do
     quote do
-      use Ecto.Model
+      use Ecto.Schema
+
+      import Ecto
+      import Ecto.Changeset
+      import Ecto.Query, only: [from: 1, from: 2]
     end
   end
 
@@ -27,10 +31,11 @@ defmodule ChaChing.Web do
       use Phoenix.Controller
 
       alias ChaChing.Repo
-      import Ecto.Model
-      import Ecto.Query, only: [from: 2]
+      import Ecto
+      import Ecto.Query, only: [from: 1, from: 2]
 
       import ChaChing.Router.Helpers
+      import ChaChing.Gettext
     end
   end
 
@@ -45,6 +50,8 @@ defmodule ChaChing.Web do
       use Phoenix.HTML
 
       import ChaChing.Router.Helpers
+      import ChaChing.ErrorHelpers
+      import ChaChing.Gettext
     end
   end
 
@@ -59,9 +66,9 @@ defmodule ChaChing.Web do
       use Phoenix.Channel
 
       alias ChaChing.Repo
-      import Ecto.Model
-      import Ecto.Query, only: [from: 2]
-
+      import Ecto
+      import Ecto.Query, only: [from: 1, from: 2]
+      import ChaChing.Gettext
     end
   end
 

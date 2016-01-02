@@ -15,4 +15,5 @@ config :cha_ching, ChaChing.Repo,
   username: "postgres",
   password: "postgres",
   database: "cha_ching_test",
+  hostname: "localhost",
   pool: Ecto.Adapters.SQL.Sandbox

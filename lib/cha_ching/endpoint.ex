@@ -33,7 +33,7 @@ defmodule ChaChing.Endpoint do
   plug Plug.Session,
     store: :cookie,
     key: "_cha_ching_key",
-    signing_salt: "l05qnN55"
+    signing_salt: "1u408YLx"
 
   plug ChaChing.Router
 end

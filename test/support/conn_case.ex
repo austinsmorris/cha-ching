@@ -36,6 +36,6 @@ defmodule ChaChing.ConnCase do
       Ecto.Adapters.SQL.restart_test_transaction(ChaChing.Repo, [])
     end
 
-    :ok
+    {:ok, conn: Phoenix.ConnTest.conn()}
   end
 end

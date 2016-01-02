@@ -9,8 +9,8 @@ use Mix.Config
 config :cha_ching, ChaChing.Endpoint,
   url: [host: "localhost"],
   root: Path.dirname(__DIR__),
-  secret_key_base: "eyquDsR3RpFd6aIzKY7iGCVnlbyMH2/T1pl4VS0C5O4vHlxhMxZz/VWolM1Uo6jg",
-  render_errors: [default_format: "html"],
+  secret_key_base: "9npBTy73prMgerxL0NiBquBuXr3iM6x389sFJYO7x8WoYZ4xIx38mlaYJ+EUzAP8",
+  render_errors: [accepts: ~w(html json)],
   pubsub: [name: ChaChing.PubSub,
            adapter: Phoenix.PubSub.PG2]
 
@@ -22,3 +22,8 @@ config :logger, :console,
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.
 import_config "#{Mix.env}.exs"
+
+# Configure phoenix generators
+config :phoenix, :generators,
+  migration: true,
+  binary_id: false
